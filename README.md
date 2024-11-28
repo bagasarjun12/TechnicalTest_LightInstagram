@@ -1,6 +1,7 @@
 ## Tutorial Penggunaan
-- Setelah clone project ke local, buat database mySQL dengan nama "light_instagram"
-- Ubah file ".env" sesuai dengan perangkat yang digunakan
+- Setelah clone project ke local, buat database mySQL baru dengan nama "light_instagram"
+- Ubah konfigurasi ".env" sesuai dengan perangkat yang digunakan (DB_DATABASE, DB_USERNAME, DB_PASSWORD)
+- ketikkan perintah "php artisan key:generate"
 - buka terminal dan ketikkan command "php artisan migrate:fresh"
 - lalu ketik "php artisan db:seed" untuk mengisi data di database
 - terakhir ketikkan "php artisan serve" untuk menjalankan program
