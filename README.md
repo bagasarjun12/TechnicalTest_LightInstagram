@@ -1,3 +1,11 @@
+## Tutorial Penggunaan
+- Setelah clone project ke local, buat database mySQL dengan nama "light_instagram"
+- Ubah file ".env" sesuai dengan perangkat yang digunakan
+- buka terminal dan ketikkan command "php artisan migrate:fresh"
+- lalu ketik "php artisan db:seed" untuk mengisi data di database
+- terakhir ketikkan "php artisan serve" untuk menjalankan program
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
