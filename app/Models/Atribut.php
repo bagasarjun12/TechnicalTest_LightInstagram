@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Atribut extends Model
 {
     use HasFactory;
     protected $table = 'atributs';
+    protected $primaryKey = 'id_atributs';
     protected $fillable = [
         'id_reels',
         'id_users',

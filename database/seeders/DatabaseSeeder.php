@@ -42,7 +42,8 @@ class DatabaseSeeder extends Seeder
                 $imageId = count($images) + 1;
                 $images[] = [
                     'id_images' => $imageId,
-                    'file' => 'default-photo.jpg',
+                    'type_file' => 'image',
+                    'file' => "quote$j.jpeg",
                     'created_at' => now(),
                     'updated_at' => now(),
                 ];
