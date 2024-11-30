@@ -1,0 +1,72 @@
+body {
+    background-color: #fafafa;
+}
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #dbdbdb;
+}
+.custom-navbar {
+    padding-top: 0 !important;  /* Remove top padding */
+    padding-bottom: 0 !important; /* Remove bottom padding */
+}
+.search-bar {
+    width: 60%;
+}
+.reel {
+    border: 1px solid #dbdbdb;
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.reel img, .reel video {
+    width: 100%;
+    height: auto;
+}
+.reel-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.profile-pic {
+    width: 40px; /* Set the width of the profile picture */
+    height: 40px; /* Set the height of the profile picture */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the circle */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    margin-right: 8px; /* Space between the image and the username */
+}
+
+.profile-pic {
+    width: 40px; /* Set the width of the profile picture */
+    height: 40px; /* Set the height of the profile picture */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the circle */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    margin-right: 8px; /* Space between the image and the username */
+}
+
+.dropdown-menu {
+    display: none; /* Initially hide the dropdown menu */
+    position: absolute; /* Position it absolutely */
+    background-color: white; /* Background color of the dropdown */
+    border: 1px solid #ccc; /* Optional border */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.dropdown-menu.show {
+    display: block; /* Show the dropdown when the class 'show' is added */
+}
+
+.dropdown-item {
+    padding: 10px 15px; /* Padding for dropdown items */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0; /* Change background on hover */
+}
+.cursor_pointer {
+    cursor: pointer;
+}

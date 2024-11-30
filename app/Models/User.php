@@ -18,10 +18,27 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'username',
         'email',
+        'photo',
+        'biodata',
         'password',
     ];
+
+    public function reels()
+    {
+        return $this->hasMany(Reel::class, 'id_users');
+    }
+
+    public function archives()
+    {
+        return $this->hasMany(Archive::class, 'id_users');
+    }
+
+    public function atributs()
+    {
+        return $this->hasMany(Atribut::class, 'id_users');
+    }
 
     /**
      * The attributes that should be hidden for serialization.

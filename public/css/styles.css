@@ -1,0 +1,122 @@
+body {
+    background-color: #fafafa;
+}
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #dbdbdb;
+}
+.custom-navbar {
+    padding-top: 0 !important;  
+    padding-bottom: 0 !important; 
+}
+.logo{
+    max-height: 50px;
+}
+.search-bar {
+    width: 600px;
+    align-items: center;
+}
+.input-group {
+    display: flex; 
+    width: 100%;
+    
+}
+
+.search-bar {
+    flex: 1;
+}
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover; 
+    cursor: pointer; 
+}
+
+.cursor_pointer {
+    cursor: pointer;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto; 
+}
+
+.reel {
+    border: 1px solid #eaeaea; 
+    border-radius: 8px; 
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.reel-header {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+
+.profile-pic {
+    width: 30px; 
+    height: 30px; 
+    border-radius: 50%; 
+}
+
+.reel-image, .reel-video {
+    width: 100%; 
+    height: auto;
+    max-height: 400px; 
+    border-radius: 8px; 
+    margin-bottom: 10px;
+}
+
+.reel-image {
+    object-fit: cover; 
+}
+
+.reel-video {
+    border-radius: 8px; 
+}
+
+.btn {
+    display: flex; 
+    align-items: center; 
+}
+
+.btn-light {
+    background-color: #f8f9fa; 
+    border: 1px solid #ced4da; 
+    color: #495057; 
+}
+
+.btn-light:hover {
+    background-color: #e2e6ea;
+}
+
+.btn-outline-secondary {
+            border-color: #d2d0d0;
+            background-color: transparent; 
+            color: #495057; 
+        }
+    
+@media only screen and (max-width: 768px) {
+    .cursor_pointer {
+        margin-top: 12px; 
+    }
+    .mobile_margin_top{
+        margin-top: 12px; 
+    }
+    
+    .dropdown-menu {
+        left: 0; /* Aligns the dropdown menu to the right */
+        
+    }
+}
+
+.gradient-icon {
+    background: linear-gradient(to right, red, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.2em; /* Adjust size as needed */
+}
