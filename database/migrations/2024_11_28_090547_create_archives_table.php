@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_users');
             $table->unsignedBigInteger('id_images');
             $table->string('caption');
+            $table->integer('like');
             $table->timestamps();
         
             // Foreign key

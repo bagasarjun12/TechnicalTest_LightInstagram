@@ -1,0 +1,110 @@
+.profile-box {
+    border: 1px solid black; /* Border hitam */
+    background-color: white; /* Latar belakang putih */
+    padding: 20px; /* Padding */
+    border-radius: 10px; /* Sudut membulat */
+}
+.profile-img {
+    width: 100px; /* Ukuran foto profil */
+    height: 100px; /* Ukuran foto profil */
+}
+.profile-container {
+    display: flex; /* Menggunakan flexbox */
+    align-items: center; /* Vertikal center */
+    justify-content: center; /* Horizontal center */
+}
+.profile-info {
+    margin-left: 20px; /* Jarak antara gambar dan teks */
+    text-align: center; /* Meratakan teks ke tengah */
+}
+
+.row2 img {
+    width: 370px; /* Make images responsive */
+    height: 370px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensure images cover the area without stretching */
+    border-radius: 3px; /* Optional: add some border radius for aesthetics */
+}
+
+.row3 img {
+    width: 240px; /* Make images responsive */
+    height: 240px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensure images cover the area without stretching */
+    border-radius: 3px; /* Optional: add some border radius for aesthetics */
+}
+
+.row4 img {
+    width: 190px; /* Make images responsive */
+    height: 190px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensure images cover the area without stretching */
+    border-radius: 3px; /* Optional: add some border radius for aesthetics */
+}
+ 
+.center-container {
+    display: flex;
+    justify-content: center; /* Center the row */
+    align-items: center; /* Center vertically if needed */
+}
+
+#unique-image-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap into the next line */
+    justify-content: center; /* Center the images */
+}
+
+#unique-image-container .col {
+    display: flex;
+    justify-content: center; /* Center the image in the column */
+}
+
+.bio-text {
+    display: block; /* Agar span berperilaku seperti block element */
+    width: 100%; /* Mengatur lebar penuh */
+    max-width: 40ch; /* Maksimal 20 karakter */
+    overflow-wrap: break-word; /* Memungkinkan pemotongan kata */
+}
+
+.btn-custom-width{
+    width: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+    #unique-image-container img {
+        width: 100px; /* Make images responsive */
+        height: 100px; /* Set a fixed height for all images */
+    }
+    .reels-margin{
+        margin: 0 ;
+        padding: 5px;
+    }
+
+    #imageContainer{
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    .image-item{
+        margin: 0;
+        padding: 1px;
+    }
+
+    .row2 img {
+        width: 170px; /* Make images responsive */
+        height: 170px; /* Set a fixed height for all images */
+        object-fit: cover; /* Ensure images cover the area without stretching */
+        border-radius: 3px; /* Optional: add some border radius for aesthetics */
+    }
+    
+    .row3 img {
+        width: 120px; /* Make images responsive */
+        height: 120px; /* Set a fixed height for all images */
+        object-fit: cover; /* Ensure images cover the area without stretching */
+        border-radius: 3px; /* Optional: add some border radius for aesthetics */
+    }
+    
+    .row4 img {
+        width: 90px; /* Make images responsive */
+        height: 90px; /* Set a fixed height for all images */
+        object-fit: cover; /* Ensure images cover the area without stretching */
+        border-radius: 3px; /* Optional: add some border radius for aesthetics */
+    }
+}

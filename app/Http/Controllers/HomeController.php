@@ -75,4 +75,9 @@ class HomeController extends Controller
         // Redirect kembali ke halaman sebelumnya
         return redirect()->back();
     }
+
+    public function upload_content(){
+        //Code here
+        return redirect()->back()->with('success', 'Content uploaded successfully.');
+    }
 }

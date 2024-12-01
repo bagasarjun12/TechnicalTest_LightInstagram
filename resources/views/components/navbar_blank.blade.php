@@ -8,16 +8,6 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <div class="mx-auto">
-            <div class="input-group mobile_margin_top">
-                <input type="text" class="form-control search-bar" placeholder="Search" id="searchInput">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="searchButton">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
         <div class="ml-auto d-flex align-items-center dropdown cursor_pointer" id="profileDropdown">
             <div class="d-flex align-items-center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">
                 <img src="{{ asset('images/' . Auth::user()->photo) }}" alt="Profile Picture" class="profile-pic">
