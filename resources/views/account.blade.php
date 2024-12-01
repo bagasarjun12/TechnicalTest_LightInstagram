@@ -54,10 +54,19 @@
         <div class="row mt-3" id="imageContainer">
             @foreach($reels as $reel)
                 <div class="col-4 mb-3 image-item">
-                    <img src="{{ asset('reels/'.$reel->file) }}" alt="Reel Image" role="button" class="img-fluid" data-toggle="modal" data-target="#imageModal{{ $reel->id_reels }}">
+                    @if($reel->type_file === 'image')
+                        <!-- Display image -->
+                        <img src="{{ asset('reels/'.$reel->file) }}" alt="Reel Image" role="button" class="img-fluid" data-toggle="modal" data-target="#imageModal{{ $reel->id_reels }}">
+                    @elseif($reel->type_file === 'video')
+                        <!-- Display video -->
+                        <video class="img-fluid" controls role="button" data-toggle="modal" data-target="#imageModal{{ $reel->id_reels }}">
+                            <source src="{{ asset('videos/'.$reel->file) }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    @endif
                 </div>
-    
-                <!-- Modal for each image -->
+
+                <!-- Modal for each reel -->
                 <div class="modal fade" id="imageModal{{ $reel->id_reels }}" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel{{ $reel->id_reels }}" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -69,13 +78,24 @@
                             </div>
                             <div class="modal-body">
                                 <div class="text-center">
-                                    <img src="{{ asset('reels/'.$reel->file) }}" alt="Reel Image" class="img-fluid" style="width: 370px; height: auto;">
+                                    @if($reel->type_file === 'image')
+                                        <!-- Display image in modal -->
+                                        <img src="{{ asset('reels/'.$reel->file) }}" alt="Reel Image" class="img-fluid" style="width: 370px; height: auto;">
+                                    @elseif($reel->type_file === 'video')
+                                        <!-- Display video in modal -->
+                                        <div class="video-wrapper">
+                                            <video class="img-fluid" controls>
+                                                <source src="{{ asset('videos/'.$reel->file) }}" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="mt-3">
                                     <?php
                                     // Initialize the like count and liked status
-                                    $count = 0; 
-                                    
+                                    $count = 0;
+
                                     // Calculate the number of likes and check if the user has liked this reel
                                     foreach ($atribut as $atr) {
                                         if ($reel->id_reels == $atr->id_reels) {
@@ -84,7 +104,7 @@
                                             }
                                         }
                                     }
-                                ?>
+                                    ?>
                                     <div class="btn btn-light like-button ml-5 mr-5 mb-2">
                                         <i class="fas fa-heart mr-1 text-danger"></i> {{ $count }} Likes
                                     </div>

@@ -76,8 +76,59 @@ class HomeController extends Controller
         return redirect()->back();
     }
 
-    public function upload_content(){
-        //Code here
-        return redirect()->back()->with('success', 'Content uploaded successfully.');
+    public function upload_content(Request $request) {
+        // Validate the incoming request
+        $request->validate([
+            'photo' => 'required|file|mimes:jpg,jpeg,png,mp4,mov|max:150000', // Max size is 150 MB
+            'caption' => 'nullable|string|max:255',
+        ]);
+        // Handle the file upload
+        if ($request->hasFile('photo')) {
+            // Get the uploaded file
+            $file = $request->file('photo');
+    
+            // Determine the file type (image or video)
+            $fileType = $file->getClientOriginalExtension();
+            $fileTypeLabel = in_array($fileType, ['jpg', 'jpeg', 'png']) ? 'image' : 'video'; // Set type as 'image' or 'video'
+    
+            // Create a unique file name with a random number
+            $randomNumber = rand(1000, 9999); // Generate a random number
+            $fileName = time() . '_' . $randomNumber . '_' . $file->getClientOriginalName(); // Create a unique file name
+    
+            // Store the file in the public/images directory
+            if($fileTypeLabel == 'image'){
+                $file->move(public_path('reels'), $fileName);
+            }else{
+                $file->move(public_path('videos'), $fileName);
+            }
+    
+            // Create a new image record in the images table
+            $image = new Image();
+            $image->type_file = $fileTypeLabel; // Store 'image' or 'video'
+            $image->file = $fileName; // Store the file path
+            $image->save(); // Save the image record
+    
+            // Create a new reel record in the reels table
+            $reel = new Reel();
+            $reel->id_users = auth()->id(); // Get the authenticated user's ID
+            $reel->id_images = $image->id_images; // Link to the uploaded image
+            if($request->caption){
+                $reel->caption = $request->caption; // Store the caption
+            }else{
+                $reel->caption = 'This Post Does Not Have A Caption';
+            }
+            $reel->save(); // Save the reel record
+            $msg = "Content uploaded successfully.";
+            $alertType = "success"; // Tipe alert
+        }
+    
+        // Menyimpan pesan ke session
+        session()->flash('alert', [
+            'type' => $alertType,
+            'message' => $msg,
+        ]);
+
+        // Redirect kembali ke halaman sebelumnya
+        return redirect()->back();
     }
 }

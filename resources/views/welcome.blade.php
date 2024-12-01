@@ -58,7 +58,7 @@
                             <img src="{{ asset("reels/$reel->file") }}" alt="Reel Image" class="reel-image">
                         @elseif ($reel->type_file === 'video')
                             <video controls class="reel-video">
-                                <source src="{{ asset("reels/$reel->file") }}" type="video/mp4">
+                                <source src="{{ asset("videos/$reel->file") }}" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         @endif 
@@ -154,20 +154,20 @@
                         <div class="form-group">
                             <label for="videoFile">Select Video (MP4, MOV)</label>
                             <div class="custom-file">
-                                <input type="file" name="video" class="custom-file-input" id="videoFile" accept=".mp4,.mov" required>
+                                <input type="file" name="photo" class="custom-file-input" id="videoFile" accept=".mp4,.mov" required>
                                 <label class="custom-file-label" for="videoFile">Choose file</label>
                             </div>
                             <small class="form-text text-muted">Max size: 150 MB</small>
                         </div>
                         <div class="form-group">
                             <video id="videoPreview" controls class="img-fluid" style="display: none; margin-top: 10px; max-width: 100%;">
-                                <source id="videoSource" src="" type="video/mp4">
+                                <source id="videoSource" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
                         <div class="form-group">
                             <label for="videoCaption">Caption</label>
-                            <textarea class="form-control" id="videoCaption" name="caption" rows="3" placeholder="Add a caption..."></textarea>
+                            <textarea class="form-control" id="imageCaption" name="caption" rows="3" placeholder="Add a caption..."></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">

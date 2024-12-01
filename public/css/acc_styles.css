@@ -67,6 +67,11 @@
     width: 100px;
 }
 
+.video-wrapper {
+    overflow: hidden; /* Potong bagian video yang kelebihan */
+    position: relative; /* Untuk memposisikan video di dalamnya */
+}
+
 @media only screen and (max-width: 768px) {
     #unique-image-container img {
         width: 100px; /* Make images responsive */

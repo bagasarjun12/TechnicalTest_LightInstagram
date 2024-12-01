@@ -20,9 +20,8 @@ return new class extends Migration
         
             // Foreign key
             $table->foreign('id_users')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('id_images')->references('id_images')->on('images')->onDelete('cascade');
-        });
-        
+            // $table->foreign('id_images')->references('id_images')->on('images')->onDelete('cascade');
+        }); 
         
     }
 
