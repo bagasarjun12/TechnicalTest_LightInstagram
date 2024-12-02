@@ -10,10 +10,14 @@ class Archive extends Model
     use HasFactory;
     protected $table = 'archives';
     protected $primaryKey = 'id_archives';
+    protected $casts = [
+        'upload_date' => 'datetime', 
+    ];
     protected $fillable = [
         'id_users',
         'id_images',
         'caption',
+        'upload_date',
     ];
 
     public function user()

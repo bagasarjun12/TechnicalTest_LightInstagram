@@ -117,11 +117,6 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function show()
-    {
-        return view('account');
-    }
-
     public function archive($id)
     {
         // Find the reel by ID
@@ -131,18 +126,24 @@ class ProfileController extends Controller
         $like = Atribut::where('id_reels', $id)
                         ->where('type', 'like')->count();
         // Create a new archive entry with the data from the reel
+
         $archive = new Archive();
         $archive->id_users = Auth::id(); // Assuming the user is authenticated
         $archive->id_images = $reel->id_images; // Assuming the reel has an id_images attribute
         $archive->caption = $reel->caption; // Assuming the reel has a caption attribute
-        $archive->like = $like; // Assuming the reel has a like attribute
+        if($like){
+            $archive->like = $like;
+        }else{
+            $archive->like = 0;
+        }
+        $archive->upload_date = $reel->created_at; // Assuming the reel has a like attribute
         $archive->save(); // Save the archive entry
 
         // Delete the reel
         $reel->delete();
 
         // Redirect back with a success message
-        return back()->with('success', 'Reel has been archived successfully.');
+        return back()->with('success', 'Content has been archived successfully.');
     }
 
     public function profile_update(Request $request)
@@ -184,5 +185,14 @@ class ProfileController extends Controller
 
         // Redirect back with a success message
         return redirect()->route('profile.edit')->with('success', 'Profile updated successfully.');
+    }
+
+    public function del_reel($id)
+    {
+        // Delete data reel
+        $data = Reel::find($id);
+        $data->delete();
+
+        return back()->with('success', 'Delete content successfully.');
     }
 }

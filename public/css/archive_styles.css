@@ -1,0 +1,48 @@
+.archive-container {
+    width: 100%; /* Full width */
+    margin: 0 auto; /* Center align */
+    padding: 0 15px; /* Horizontal padding */
+    box-sizing: border-box; /* Include padding in width */
+    margin-bottom: 200px;
+}
+
+/* Optional: To make it responsive like Bootstrap */
+@media (min-width: 576px) {
+    .archive-container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .archive-container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .archive-container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .archive-container {
+        max-width: 1140px;
+    }
+}
+
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.file-preview {
+    max-width: 100%; /* Ensure it doesn't overflow */
+    overflow: hidden; /* Hide overflow */
+}
+img, video {
+    max-width: 100%; /* Make sure it fits within the modal */
+    max-height: 100%; /* Ensure it doesn't exceed modal height */
+}

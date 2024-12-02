@@ -93,8 +93,12 @@ class HomeController extends Controller
     
             // Create a unique file name with a random number
             $randomNumber = rand(1000, 9999); // Generate a random number
-            $fileName = time() . '_' . $randomNumber . '_' . $file->getClientOriginalName(); // Create a unique file name
-    
+            if($fileTypeLabel == 'image'){
+                $fileName = time() . '_' . $randomNumber . '_LIimage.'.$fileType; 
+            }else{
+                $fileName = time() . '_' . $randomNumber . '_LIvideo.'.$fileType; 
+            }
+           
             // Store the file in the public/images directory
             if($fileTypeLabel == 'image'){
                 $file->move(public_path('reels'), $fileName);
